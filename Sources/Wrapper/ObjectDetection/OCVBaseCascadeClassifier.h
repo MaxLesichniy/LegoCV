@@ -46,17 +46,17 @@ NS_ASSUME_NONNULL_BEGIN
 //
 // TODO: Add Swift wrapper method to return OCVRect directly.
 //
-- (NSArray<OCVRectValue *>*)detectMultiScaleOnImage:(id<OCVInputArrayable>)image scaleFactor:(double)scaleFactor;
-- (NSArray<OCVRectValue *>*)detectMultiScaleOnImage:(id<OCVInputArrayable>)image scaleFactor:(double)scaleFactor minNeighbours:(NSInteger)minNeighbours;
-- (NSArray<OCVRectValue *>*)detectMultiScaleOnImage:(id<OCVInputArrayable>)image scaleFactor:(double)scaleFactor minNeighbours:(NSInteger)minNeighbours flags:(NSInteger)flags;
-- (NSArray<OCVRectValue *>*)detectMultiScaleOnImage:(id<OCVInputArrayable>)image scaleFactor:(double)scaleFactor minNeighbours:(NSInteger)minNeighbours flags:(NSInteger)flags minSize:(OCVSize)minSize;
-- (NSArray<OCVRectValue *>*)detectMultiScaleOnImage:(id<OCVInputArrayable>)image scaleFactor:(double)scaleFactor minNeighbours:(NSInteger)minNeighbours flags:(NSInteger)flags minSize:(OCVSize)minSize maxSize:(OCVSize)maxSize;
+- (NSArray<OCVRectValue *>*)detectMultiscaleWith:(id<OCVInputArrayable>)image scaleFactor:(double)scaleFactor;
+- (NSArray<OCVRectValue *>*)detectMultiscaleWith:(id<OCVInputArrayable>)image scaleFactor:(double)scaleFactor minNeighbours:(NSInteger)minNeighbours;
+- (NSArray<OCVRectValue *>*)detectMultiscaleWith:(id<OCVInputArrayable>)image scaleFactor:(double)scaleFactor minNeighbours:(NSInteger)minNeighbours flags:(NSInteger)flags;
+- (NSArray<OCVRectValue *>*)detectMultiscaleWith:(id<OCVInputArrayable>)image scaleFactor:(double)scaleFactor minNeighbours:(NSInteger)minNeighbours flags:(NSInteger)flags minSize:(OCVSize)minSize;
+- (NSArray<OCVRectValue *>*)detectMultiscaleWith:(id<OCVInputArrayable>)image scaleFactor:(double)scaleFactor minNeighbours:(NSInteger)minNeighbours flags:(NSInteger)flags minSize:(OCVSize)minSize maxSize:(OCVSize)maxSize;
 
 /*!
  *  Objective wrapper call by specifying options.
  */
-- (OCVCascadeClassifierResult *)detectMultiScaleOnImage:(id<OCVInputArrayable>)image;
-- (OCVCascadeClassifierResult *)detectMultiScaleOnImage:(id<OCVInputArrayable>)image withOptions:(OCVCascadeClassifierOptions *)options;
+- (OCVCascadeClassifierResult *)detectMultiscaleWith:(id<OCVInputArrayable>)image;
+- (OCVCascadeClassifierResult *)detectMultiscaleWith:(id<OCVInputArrayable>)image withOptions:(OCVCascadeClassifierOptions *)options;
 
 @end
 

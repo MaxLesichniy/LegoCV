@@ -288,24 +288,22 @@
 + (cv::Mat)matFromBuffer:(CVPixelBufferRef)buffer {
     size_t cols = CVPixelBufferGetWidth(buffer);
     size_t rows = CVPixelBufferGetHeight(buffer);
-    
+
     cv::Mat cvMat((int)rows, (int)cols, CV_8UC4); // 8 bits per component, 4 channels (color channels + alpha)
-    
-    CVPixelBufferLockBaseAddress(buffer, 0);
-    
+
+    CVPixelBufferLockBaseAddress(buffer, kCVPixelBufferLock_ReadOnly);
+
     void *baseAddress = CVPixelBufferGetBaseAddress(buffer);
-    
+
     size_t dataSize = CVPixelBufferGetDataSize(buffer);
-    
+
     size_t targetDataSize = rows * cols * 4;
-    
+
     if (dataSize >= targetDataSize) {
         std::memcpy(cvMat.data, baseAddress, targetDataSize);
     }
-    
-    CVPixelBufferUnlockBaseAddress(buffer, 0);
-    
-    return cvMat;
+
+    CVPixelBufferUnlockBaseAddress(buffer, kCVPixelBufferLock_ReadOnly);
 }
 
 

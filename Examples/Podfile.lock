@@ -1,0 +1,23 @@
+PODS:
+  - LegoCV (0.1.3):
+    - OpenCV
+  - OpenCV (4.3.0)
+
+DEPENDENCIES:
+  - LegoCV (from `../LegoCV.podspec`)
+
+SPEC REPOS:
+  trunk:
+    - OpenCV
+
+EXTERNAL SOURCES:
+  LegoCV:
+    :path: "../LegoCV.podspec"
+
+SPEC CHECKSUMS:
+  LegoCV: d95819be62ce63bcf25d7758c7c2c87e5a96fccf
+  OpenCV: 681e0451c1e54c5930a8922277f817ed5d5ab459
+
+PODFILE CHECKSUM: 96a3caf1b05c7da4b9f19ce7bd30c0078679a49e
+
+COCOAPODS: 1.11.2

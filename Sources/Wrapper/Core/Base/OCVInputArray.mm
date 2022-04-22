@@ -91,7 +91,7 @@
 
 - (void)setup {
     if ([self.object isKindOfClass:[OCVMatDataAllocator class]]) {
-        cv::Mat *mat = [self.object source];
+        cv::Mat *mat = [(OCVMatDataAllocator*)self.object source];
         
         _arrayReference = new cv::_InputArray(*mat);
     }

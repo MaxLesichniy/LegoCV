@@ -8,9 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef struct OCVSize
-{
+typedef struct OCVSize {
     NSInteger width;
     NSInteger height;
-}
-OCVSize;
+} OCVSize;

@@ -16,6 +16,12 @@
 #import "OCVColorConversionType.h"
 #import "OCVInterpolationType.h"
 
+typedef NS_ENUM(NSInteger, OCVInpaintMethod) {
+    OCVInpaintMethodNS    = 0, //!< Use Navier-Stokes based method
+    OCVInpaintMethodTelea = 1  //!< Use the algorithm proposed by Alexandru Telea @cite Telea04
+};
+
+//!
 /*!
  *  Common Image Operations as defined in imgproc.hpp
  */
@@ -152,5 +158,8 @@
 + (void)rectangleOnSource:(id<OCVInputOutputArrayable>)source fromPoint:(OCVPoint)point1 toPoint:(OCVPoint)point2 withColor:(OCVScalar)color thickness:(NSInteger)thickness lineType:(NSInteger)lineType shift:(NSInteger)shift;
 
 + (void)rectangleOnSource:(id<OCVInputOutputArrayable>)source fromRect:(OCVRect)rect withColor:(OCVScalar)color thickness:(NSInteger)thickness lineType:(NSInteger)lineType shift:(NSInteger)shift;
+
++ (void)inpaintWithSource:(id<OCVInputArrayable>)source mask:(id<OCVInputArrayable>)mask toDestination:(id<OCVOutputArrayable>)destination inpaintRange:(double)inpaintRange method:(OCVInpaintMethod)method;
+
 
 @end

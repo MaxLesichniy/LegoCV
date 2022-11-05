@@ -18,4 +18,6 @@
 #import "OCVInputOutputArrayable.h"
 //#import "OCVCascadeClassifier.h"
 
+#import "OCVMat+ImageProcessing.h"
+
 #endif /* OCVCore_h */

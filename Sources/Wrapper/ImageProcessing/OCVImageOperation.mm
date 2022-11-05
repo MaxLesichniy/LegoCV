@@ -8,6 +8,7 @@
 
 #import <opencv2/core.hpp>
 #import <opencv2/imgproc.hpp>
+#import <opencv2/photo.hpp>
 
 #import "OCVGeometry+Private.h"
 
@@ -57,6 +58,10 @@
     
 #warning FIX THIS
     //cv::rectangle(*source.inputOutput._inputOutput, convertPoint(point1), convertPoint(point2), convertScalar(color), (int)thickness, (int)lineType, (int)shift);
+}
+
++ (void)inpaintWithSource:(id<OCVInputArrayable>)source mask:(id<OCVInputArrayable>)mask toDestination:(id<OCVOutputArrayable>)destination inpaintRange:(double)inpaintRange method:(OCVInpaintMethod)method {
+    cv::inpaint(*source.input._input, *mask.input._input, *destination.output._output, inpaintRange, (int)method);
 }
 
 @end

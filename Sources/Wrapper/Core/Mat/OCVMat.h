@@ -49,6 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithRows:(NSInteger)rows cols:(NSInteger)cols;
 - (instancetype)initWithRows:(NSInteger)rows cols:(NSInteger)cols type:(OCVDepthType)type channels:(NSInteger)channels;
 - (instancetype)initWithSize:(OCVSize)size type:(OCVDepthType)type channels:(NSInteger)channels;
+- (instancetype)initWithData:(nonnull void *)data size:(OCVSize)size type:(OCVDepthType)type channels:(NSInteger)channels step:(size_t)step; // 0 for autostep
 
 /*!
  *  Creates a new deep copy of the matrix

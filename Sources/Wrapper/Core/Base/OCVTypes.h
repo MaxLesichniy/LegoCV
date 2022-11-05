@@ -10,13 +10,14 @@
 
 typedef NS_ENUM(NSInteger, OCVDepthType) {
     OCVDepthTypeDefault = -1,
-    OCVDepthTypeCv8U    = 0,
-    OCVDepthTypeCv8S    = 1,
-    OCVDepthTypeCv16U   = 2,
-    OCVDepthTypeCv16S   = 3,
-    OCVDepthTypeCv32S   = 4,
-    OCVDepthTypeCv32F   = 5,
-    OCVDepthTypeCv64F   = 6
+    OCVDepthTypeU8    = 0,
+    OCVDepthTypeS8    = 1,
+    OCVDepthTypeU16   = 2,
+    OCVDepthTypeS16   = 3,
+    OCVDepthTypeS32   = 4,
+    OCVDepthTypeF32   = 5,
+    OCVDepthTypeF64   = 6,
+    OCVDepthTypeF16   = 7 // ?
 };
 
 #pragma mark - Types from base.hpp

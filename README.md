@@ -74,7 +74,7 @@ func process(image: OCVMat) {
     minSize.height = 30;
         
     OCVMat* gray = [[OCVMat alloc] init];
-    OCVMat* smallImage = [[OCVMat alloc] initWithRows:round(image.rows / scale) cols:round(image.cols / scale) type: OCVDepthTypeCv8U, channels: 1)
+    OCVMat* smallImage = [[OCVMat alloc] initWithRows:round(image.rows / scale) cols:round(image.cols / scale) type: OCVDepthType8U, channels: 1)
     
     [OCVOperation convertColorFromSource:image toDestination:gray with:OCVColorConversionTypeBGR2GRAY];
     [OCVOperation resizeFromSource:gray toDestination:smallImage size:smallImage.size fx:0 fy:0 interpolation:OCVInterpolationTypeLinear];

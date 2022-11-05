@@ -11,7 +11,7 @@
 #import "OCVMatDataAllocator.h"
 
 @interface OCVMatDataAllocator () {
-    cv::Mat source;
+    cv::Mat *source;
 }
 
 @end
@@ -19,21 +19,26 @@
 @implementation OCVMatDataAllocator
 
 - (cv::Mat *)source {
-    return &source;
+    return source;
 }
 
-- (instancetype)initWithMatInstance:(cv::Mat)mat {
+- (instancetype)initWithMatInstance:(cv::Mat *)mat {
     self = [super init];
     
     if (self) {
-        source = mat;
+        self->source = mat;
     }
     
     return self;
 }
 
 - (void)dealloc {
+    if (source) {
+        delete source;
+    }
+
     source = NULL;
 }
 
 @end
+
